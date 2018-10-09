@@ -1,0 +1,25 @@
+{
+  "stops":[
+    {
+      "name": "kookmin University",
+      "location":{
+        "longitude": 126.996917,
+        "latitude": 37.611026,
+      },
+    },
+    {
+      "name": "Cat Structure",
+      "location":{
+        "longitude": 126.997161,
+        "latitude":37.610304,
+      },
+    },
+    {
+      "name": "Nove",
+      "location":{
+        "longitude": 126.997075,
+        "latitude": 37.608417,
+      },
+    },
+  ]
+}
