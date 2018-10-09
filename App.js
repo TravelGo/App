@@ -84,26 +84,13 @@ export default class App extends Component{
           */
         >
 
-          // {data.stops.map((contact, i) =>
-          //   <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
-          //     onPress={e => alert("Place name : " + contact.name + "\n"
-          //     + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}
-          //   />
-          // )}
-
-          {data.stops.map(function(contact, i) {
-              var distance = geolib.getDistance(contact.location, this.state.user);
-
-              if(distance <= 50) {
-                <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
-                onPress={e => alert("Place name : " + contact.name + "\n"
-                + "Distance with User : " + distance + "m")}
-                />
-              } else {
-                <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}/>
-              }
-            }
+          {data.stops.map((contact, i) =>
+            <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
+              onPress={e => alert("Place name : " + contact.name + "\n"
+              + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}
+            />
           )}
+
 
         </MapView>
 
