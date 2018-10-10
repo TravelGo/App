@@ -46,14 +46,12 @@ class T_View extends Component {
   render () {
       return (
           <View style={styles.T_View}>
-              <View style={{flex: 1}}>
-              </View>
-              <Image
-                  style={{flex: 15, alignSelf: 'stretch', borderRadius: 10, marginLeft: 50, marginRight: 50}}
-                  source={{uri: 'http://www.doopedia.co.kr/_upload/image4/1711/03/171103021618274/171103021618274_thumb_400.jpg'}} //서버에서 받아올 것
-              />
-              <View style={{flex: 1}}>
-              </View>
+                <TouchableOpacity onPress={() => alert("방문 확인")}>
+                    <Image
+                        style={{flex: 1, width: 260, alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center', borderRadius: 10, marginLeft: 50, marginRight: 50, marginTop: 10, marginBottom: 10,}}
+                        source={{uri: 'http://www.doopedia.co.kr/_upload/image4/1711/03/171103021618274/171103021618274_thumb_400.jpg'}} //서버에서 받아올 것
+                    />
+                </TouchableOpacity>
           </View>
       );
   }
@@ -283,7 +281,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         width: 100,
-        // alignSelf: 'stretch',
     },
 
     T_Button_Text: {
