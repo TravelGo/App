@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, AppRegistry, Image, Button} from 'react-native';
+import {Modal, Platform, StyleSheet, Text, View, AppRegistry, Image, Button} from 'react-native';
 import MapView from 'react-native-maps';
 import geolib from 'geolib';
 import {Dimensions} from "react-native";
@@ -104,11 +104,14 @@ export default class App extends Component{
 
           {this.state.stops.map((contact, i) =>
               geolib.getDistance(contact.location, this.state.user) <= 50 ?
-              <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
-              onPress={e => alert("Place name : " + contact.name + "\n"
-              + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}/>
+              <MapView.Marker coordinate={contact.location} key={i} image={StopOnImg}
+              onPress={e => {
+                alert("Place name : " + contact.name + "\n"
+              + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}}/>
               : <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
             />
+
+
 
           )}
 
