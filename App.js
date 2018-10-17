@@ -7,11 +7,10 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, AppRegistry, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, AppRegistry, Image, Button} from 'react-native';
 import MapView from 'react-native-maps';
 import geolib from 'geolib';
 import {Dimensions} from "react-native";
-import data from './travel_stop.json';
 import StopOnImg from './images/travelstop(on).png';
 import StopOffImg from './images/travelstop(off).png';
 
@@ -30,14 +29,26 @@ export default class App extends Component{
         latitudeDelta: 1,
         longitudeDelta: 1,
       },
-      stop:{
-        latitude: 37.611026,
-        longitude: 126.996917
-      }
+      stops:[],
     };
   }
 
+
+  import_json_url(){
+    return fetch('http://35.231.168.105/travelstop/37.610304/126.996917')
+    .then(response => response.json())
+    .then((responseJson) => {
+      this.setState({
+        stops: responseJson,
+      })
+      console.log(this.state.stops)
+    })
+    .catch(error => alert(error));
+  }
+
+
   componentDidMount(){
+    this.import_json_url()
     setInterval(() => {
       navigator.geolocation.getCurrentPosition(
           (position) =>{
@@ -58,13 +69,19 @@ export default class App extends Component{
 
 
 
+
   render() {
     return (
 
       <View style={styles.view}>
         <View style={styles.view}>
+          <Text>User Position</Text>
           <Text>{this.state.user.latitude}</Text>
           <Text>{this.state.user.longitude}</Text>
+          <Button
+            title="refresh"
+            onPress={this.import_json_url}
+          />
 
         </View>
         <MapView style={styles.mapview}
@@ -85,7 +102,7 @@ export default class App extends Component{
         >
 
 
-          {data.stops.map((contact, i) =>
+          {this.state.stops.map((contact, i) =>
               geolib.getDistance(contact.location, this.state.user) <= 50 ?
               <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
               onPress={e => alert("Place name : " + contact.name + "\n"
