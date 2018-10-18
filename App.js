@@ -75,19 +75,14 @@ export default class App extends Component{
 
       <View style={styles.view}>
         <View style={styles.view}>
-          <Text>User Position</Text>
-          <Text>{this.state.user.latitude}</Text>
-          <Text>{this.state.user.longitude}</Text>
-          <Button
-            title="refresh"
-            onPress={this.import_json_url}
-          />
+        <Text>{this.state.user.longitude}</Text>
+        <Text>{this.state.user.latitude}</Text>
 
         </View>
         <MapView style={styles.mapview}
           showsUserLocation = {true}
           initialRegion={{
-              latitude: 37.611026,
+              latitude: 38.611026,
               longitude: 126.996917,
               latitudeDelta: 0.005,
               longitudeDelta: 0.005,
@@ -107,19 +102,17 @@ export default class App extends Component{
               <MapView.Marker coordinate={contact.location} key={i} image={StopOnImg}
               onPress={e => {
                 alert("Place name : " + contact.name + "\n"
-              + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}}/>
-              : <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}
-            />
-
-
-
+              + "Distance with User : " + geolib.getDistance(contact.location, this.state.user) + "m")}}><Image source={StopOnImg}/></MapView.Marker>
+              : <MapView.Marker coordinate={contact.location} key={i} image={StopOffImg}><Image source={StopOffImg} style={{ width: 40, height: 40 }} /></MapView.Marker>
           )}
 
 
 
         </MapView>
 
+        <View styles={styles.view}>
 
+        </View>
       </View>
 
     );
@@ -131,16 +124,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   mapview:{
-    flex: 5,
-  },
-  container: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    flex: 10,
   },
   tile:{
         height:30,
