@@ -14,7 +14,7 @@ const ThirdRoute = () => (
 );
 
 export default class TabViewExample extends React.Component {
-  
+
   state = {
     index: 0,
     routes: [
@@ -25,22 +25,19 @@ export default class TabViewExample extends React.Component {
   };
 
   _goToMap = () => { Actions.map() }
-  
+
   render() {
     return (
       <View style={{flexDirection: 'column', flex: 1}}>
-        <View style={{paddingHorizontal: 15, padding: 35,
-          backgroundColor: '#109eff', height: 100, resizeMode: 'contain', flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TouchableOpacity onPress={this._goToMap}>
+        <View style={{paddingHorizontal: 15, justifyContent:'space-between', backgroundColor: '#109eff', height: 100, flexDirection: 'row', alignItems:'center'}}>
+          <TouchableOpacity onPress={this._goToMap} style={{width:30}}>
             <Image source={require("./images/goBackButton.png")} style={{width:30, height: 30, resizeMode: 'contain'}}/>
           </TouchableOpacity>
           <Text style={{color: 'white', fontSize: 30}}>마이페이지</Text>
-          <TouchableOpacity onPress={this._toggleModal}>
-            <Image source={require("./images/goBackButton.png")} style={{width:30, height: 30, resizeMode: 'contain'}}/>
-          </TouchableOpacity>
+          <View style={{width:30}}></View>
         </View>
         <TabView
-        
+
           navigationState={this.state}
           renderScene={SceneMap({
             map: FirstRoute,
