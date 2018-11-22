@@ -18,7 +18,7 @@ class T_Title extends Component {
 ```
 
 ### 2. Travel STOP 사진 받아오기, 방문확인 추가
-> 아래 코드의 `<Image />` 부분의 `source={{uri: }}` 주소 부분 받아와야함
+> 아래 코드의 `<Image />` 부분의 `source={{uri: }}` 주소 부분 받아와야함  
 > `<Toucable Opacity />` 를 통해 사진이 클릭될 경우 방문자 수가 늘어나야함
 ```javascript
 class T_View extends Component {
