@@ -2,9 +2,9 @@ TravelStop.js
 ========
 
 ## Travel STOP 이름 받아오기
-> 아래 코드의 '< <Text> </Text> >' 부분을 받아와야함
-```'javascript
-'''
+> 아래 코드의 `< <Text> </Text> >` 부분을 받아와야함
+```javascript
+
 class T_Title extends Component {
   render () {
       return (
@@ -16,13 +16,12 @@ class T_Title extends Component {
       );
   }
 }
-'''
 ```
 
 ## Travel STOP 사진 받아오고, 방문확인 추가
-> 아래 코드의 '< <Image /> >' 부분의 '<source={{uri: }}>' 주소 부분 받아와야 함
+> 아래 코드의 `< Imgae />` 부분의 `<source={{uri: }}>` 주소 부분 받아와야 함
 ```javascript
-'''
+
 class T_View extends Component {
   render () {
       return (
@@ -37,6 +36,6 @@ class T_View extends Component {
       );
   }
 }
-'''
+
 ```
 
