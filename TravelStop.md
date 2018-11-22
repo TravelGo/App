@@ -1,7 +1,7 @@
 TravelStop.js
 ========
 
-## Travel STOP 이름 받아오기
+### 1. Travel STOP 이름 받아오기
 > 아래 코드의 `<Text />` 부분을 받아와야함
 ```javascript
 class T_Title extends Component {
@@ -17,7 +17,7 @@ class T_Title extends Component {
 }
 ```
 
-## Travel STOP 사진 받아오기, 방문확인 추가
+### 2. Travel STOP 사진 받아오기, 방문확인 추가
 > 아래 코드의 `<Image />` 부분의 `<source={{uri: }}>` 주소 부분 받아와야함
 > `<Toucable Opacity />` 를 통해 사진이 클릭될 경우 방문자 수가 늘어나야함
 ```javascript
@@ -37,7 +37,7 @@ class T_View extends Component {
 }
 ```
 
-## Travel STOP 소개(정보) 받아오기
+### 3. Travel STOP 소개(정보) 받아오기
 > 아래 코드의 `<Text />` 부분에 소개하는 내용을 받아와야함.
 ```javascript
 class T_Info extends Component {
@@ -59,7 +59,7 @@ class T_Info extends Component {
 }
 ```
 
-## Travel STOP 최근 방명록 받아오기
+### 4. Travel STOP 최근 방명록 받아오기
 > 아래 코드의 `최근 방명록 1, 2, 3` 부분에 최근 방명록 3개를 받아와야함.
 ```javascript
 class T_Mention extends Component {
@@ -89,7 +89,7 @@ class T_Mention extends Component {
 }
 ```
 
-## Travel STOP 좌표값 받아와서 지도 불러오기
+### 5. Travel STOP 좌표값 받아와서 지도 불러오기
 > 아래 코드의 `return()` 내부의 `latitude: `, `lomgitude: ` 에 위도, 경도 값 받아와야함.
 ```javascript
 class T_Map extends Component{
