@@ -1,17 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Dimensions, Button, Icon, TouchableOpacity, Image } from 'react-native';
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import * as Progress from 'react-native-progress';
-
-const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />
-);
-const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />
-);
-const ThirdRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />
-);
 
 export default class TabViewExample extends React.Component {
 
@@ -73,22 +62,7 @@ export default class TabViewExample extends React.Component {
               </Text>
             </View>
           </View>
-
         </View>
-          
-        
-        
-        <TabView
-
-          navigationState={this.state}
-          renderScene={SceneMap({
-            map: FirstRoute,
-            TravelStop: SecondRoute,
-            Achieve: ThirdRoute
-          })}
-          onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: Dimensions.get('window').width}}
-        />
       </View>
     );
   }
