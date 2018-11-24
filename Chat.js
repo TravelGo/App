@@ -44,7 +44,7 @@ export default class Chat extends Component {
            </TouchableOpacity>
             <Text style={styles.UpperText}>용두리</Text>
             <TouchableOpacity>
-              <Image source={require("./images/Setting_Button.png")} style={styles.UpperButton}/>
+              <Image source={require("./images/right.png")} style={styles.UpperButton}/>
             </TouchableOpacity>
           </View> 
           <View style={styles.UpperAdditionView}>        
