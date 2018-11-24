@@ -14,8 +14,9 @@ export default class Position extends React.Component {
         <View style={styles.box3}>
           <Text style={styles.text}>3</Text>
         </View>
+        <Image source={require("./images/Korea.png")} style={styles.Korea}/>
         <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images/Korea.png")} style={styles.Korea}/>
+          <Image source={require("./images//Gb.png")} style={styles.Gb}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images/Gw.png")} style={styles.Gw}/>
@@ -24,10 +25,7 @@ export default class Position extends React.Component {
           <Image source={require("./images/Gy.png")} style={styles.Gy}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images/Sl.png")} style={styles.Sl}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Ic.png")} style={styles.Ic}/>
+          <Image source={require("./images//Cn.png")} style={styles.Cn}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Cb.png")} style={styles.Cb}/>
@@ -36,34 +34,34 @@ export default class Position extends React.Component {
           <Image source={require("./images//Gn.png")} style={styles.Gn}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Cn.png")} style={styles.Cn}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Gb.png")} style={styles.Gb}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Dj.png")} style={styles.Dj}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Us.png")} style={styles.Us}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Dg.png")} style={styles.Dg}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
-          <Image source={require("./images//Bs.png")} style={styles.Bs}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Jn.png")} style={styles.Jn}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Jb.png")} style={styles.Jb}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images//Us.png")} style={styles.Us}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images//Bs.png")} style={styles.Bs}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Gj.png")} style={styles.Gj}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images//Dg.png")} style={styles.Dg}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images//Dj.png")} style={styles.Dj}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images//Ic.png")} style={styles.Ic}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Jj.png")} style={styles.Jj}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._goToMap}>
+          <Image source={require("./images/Sl.png")} style={styles.Sl}/>
         </TouchableOpacity>
       </View>
     );
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
   Korea: {
     position: 'absolute',
     resizeMode: 'contain',
-    top: 100,
+    top: 291,
     left: -30,
     width: 450,
     height: 450,
