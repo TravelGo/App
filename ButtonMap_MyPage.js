@@ -6,14 +6,6 @@ export default class Position extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.box1}>
-        </View>
-        <View style={styles.box2}>
-          <Text style={styles.text}>2</Text>
-        </View>
-        <View style={styles.box3}>
-          <Text style={styles.text}>3</Text>
-        </View>
         <Image source={require("./images/Korea.png")} style={styles.Korea}/>
         <TouchableOpacity onPress={this._goToMap}>
           <Image source={require("./images//Gb.png")} style={styles.Gb}/>
@@ -74,7 +66,7 @@ const styles = StyleSheet.create({
   Korea: {
     position: 'absolute',
     resizeMode: 'contain',
-    top: 291,
+    top: 100,
     left: -30,
     width: 450,
     height: 450,
