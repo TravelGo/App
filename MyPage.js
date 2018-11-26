@@ -6,15 +6,23 @@ import ButtonMap from "./ButtonMap_MyPage"
 
 export default class TabViewExample extends React.Component {
   Screen = { 
-    "buttonmap" : ButtonMap,
+    "map" : ButtonMap,
+    "travelstop" : ButtonMap,
+    "challenge" : ButtonMap,
   }
-  _goToMap = () => { Actions.map() }
+  state = {
+    "currentPage" : this.Screen[Object.keys(this.Screen)[0]]
+  }
+
+  _goToMap = (e) => { 
+    this.setState({
+      currentPage : this.Screen[e]
+    })
+  }
 
   render() {
     return (
-      <View style={{flexDirection: 'column', height: 180}}>
-
-
+      <View style={{flexDirection: 'column', flex : 1}}>
         <View style={{paddingHorizontal: 15, justifyContent:'space-between', backgroundColor: '#00afff', height: 60, flexDirection: 'row', alignItems:'center'}}>
           <TouchableOpacity onPress={this._goToMap} style={{width:30}}>
             <Image source={require("./images/goBackButton.png")} style={{width:30, height: 30, resizeMode: 'contain'}}/>
@@ -22,8 +30,6 @@ export default class TabViewExample extends React.Component {
           <Text style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}>마이페이지</Text>
           <View style={{width:30}}></View>
         </View>
-        
-
         <View style={{flex: 1, backgroundColor: "#00afff", }}>
           <View style={{flexDirection: 'row', paddingLeft: 10, paddingRight: 10, marginLeft: 10, marginRight: 10, margin: 5, backgroundColor: "white", borderRadius: 10, flex: 1, alignItems: "center", justifyContent: "center", }}>
             <View style={{flex: 1, width: 10, height: 20,  backgroundColor: '#74DF00', justifyContent: "center", alignItems: "center"}}>
@@ -35,8 +41,6 @@ export default class TabViewExample extends React.Component {
             <View style={{flex: 1}}></View>
           </View>
         </View>        
-        
-
         <View style={{flex: 1, flexDirection: "row", backgroundColor: "#00afff", paddingRight: 10, paddingLeft: 10}}>
           
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -59,21 +63,27 @@ export default class TabViewExample extends React.Component {
           </View>
         </View>
         <View style={{flexDirection: 'row', backgroundColor: "white", flex: 0.7, height: 60, flexDirection: 'row', alignItems:'center'}}> 
-          <TouchableOpacity onPress={this._goToMap} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
-            <Text style={{ fontSize: 21, color : '#00afff', marginTop: 17.5,textAlign: 'center', fontWeight: 'bold'}}> 지도 
+          <TouchableOpacity onPress={() => { this._goToMap("map"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
+            <Text style={{ fontSize: 18, color : '#00afff', marginTop: 18.5,textAlign: 'center', fontWeight: 'bold'}}>
+            지도 
             </Text>
           }
           </TouchableOpacity>
-          <TouchableOpacity onPress={this._goToMap} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
-            <Text style={{ fontSize: 21, color : '#00afff', marginTop: 17.5,textAlign: 'center', fontWeight: 'bold'}}> 트레블 스탑 
+          <TouchableOpacity onPress={() => { this._goToMap("travelstop"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
+            <Text style={{ fontSize: 18, color : '#00afff', marginTop: 18.5,textAlign: 'center', fontWeight: 'bold'}}>
+            트레블 스탑 
             </Text>
           }
           </TouchableOpacity>
-          <TouchableOpacity onPress={this._goToMap} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
-            <Text style={{ fontSize: 21, color : '#00afff', marginTop: 17.5,textAlign: 'center', fontWeight: 'bold'}}> 도전 과제 
+          <TouchableOpacity onPress={() => { this._goToMap("challenge"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
+            <Text style={{ fontSize: 18, color : '#00afff', marginTop: 18.5,textAlign: 'center', fontWeight: 'bold'}}>
+            도전 과제 
             </Text>
           }
           </TouchableOpacity>
+        </View>
+        <View style={{flex:12}}>
+          <this.state.currentPage/>
         </View>
       </View>
     );
