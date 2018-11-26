@@ -35,53 +35,77 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <View>
         <View style={styles.MainView}>
 
-          <View style={styles.UpperView}>
-            <TouchableOpacity>
-              <Image source={require("./images/Back_Button.png")} style={styles.UpperButton}/>
-           </TouchableOpacity>
-            <Text style={styles.UpperText}>용두리</Text>
-            <TouchableOpacity>
-              <Image source={require("./images/right.png")} style={styles.UpperButton}/>
-            </TouchableOpacity>
-          </View> 
-          <View style={styles.UpperAdditionView}>        
-            <Text style={styles.SmallText}>접속자 수 </Text>
-            <Image source={require("./images/person.png")} style={{width:15, resizeMode: 'contain'}}></Image>
-            <Text style={styles.SmallText}> 8</Text>
-          </View>
+          <TopBar/>
 
-          <View style={styles.ChatView}>
-            <Image source={require("./images/Logo.png")} style={styles.ImageBackground}></Image>
-            <View style={styles.ScrollView}> 
-                <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this._onRefresh.bind(this)} />} >
-                  <View style={{alignItems: 'center'}}>
-                    <Text style={{borderStyle: 'solid'}}>"용두리" 채팅방에 입장하셨습니다.</Text>
-                  </View>
-                  <View style={{flexDirection: 'row'}}>
-                    <Text style={{borderStyle: 'solid'}}>용두리 마스터(555):</Text>
-                    <Text> hi</Text>
-                  </View>
-                  <View style={{flexDirection: 'row'}}>
-                    <Text style={{borderStyle: 'solid'}}>용두리 마스터(555):</Text>
-                    <Text> hi</Text>
-                  </View>
-                </ScrollView>
-            </View>
-          </View>
+          <ChatBox/>
 
-          <View style={styles.TextInputView}>
-              <TextInput style={styles.TextInput_style} placeholder='     보낼 내용을 입력해주세요'></TextInput>
-              <TouchableOpacity>
-                <Image source={require("./images/send.png")} style={{width:40, resizeMode:'contain'}}/>
-              </TouchableOpacity>
-          </View>
+          <TextInputBar/>
+          
+        </View>
+    );
+  }
+}
 
+class TopBar extends Component {
+  render() {
+    return (
+      <View>
+        <View style={styles.UpperView}>
+         <TouchableOpacity>
+            <Image source={require("./images/Back_Button.png")} style={styles.UpperButton}/>
+          </TouchableOpacity>
+          <Text style={styles.UpperText}>용두리</Text>
+          <TouchableOpacity>
+            <Image source={require("./images/right.png")} style={styles.UpperButton}/>
+          </TouchableOpacity>
+        </View>
+       <View style={styles.UpperAdditionView}>        
+          <Text style={styles.SmallText}>접속자 수 </Text>
+          <Image source={require("./images/person.png")} style={{width:15, resizeMode: 'contain'}}></Image>
+          <Text style={styles.SmallText}> 8</Text>
         </View>
       </View>
-    );
+    )
+  } 
+}
+
+class ChatBox extends Component {
+  render() {
+    return (
+      <View style={styles.ChatView}>
+        <Image source={require("./images/Logo.png")} style={styles.ImageBackground}></Image>
+        <View style={styles.ScrollView}> 
+          <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this._onRefresh.bind(this)} />} >
+            <View style={{alignItems: 'center'}}>
+              <Text style={{borderStyle: 'solid'}}>"용두리" 채팅방에 입장하셨습니다.</Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{borderStyle: 'solid'}}>용두리 마스터(555):</Text>
+              <Text> hi</Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{borderStyle: 'solid'}}>용두리 마스터(555):</Text>
+              <Text> hi</Text>
+            </View>
+          </ScrollView>
+        </View>
+      </View>
+    )
+  }
+}
+
+class TextInputBar extends Component {
+  render() {
+    return (
+      <View style={styles.TextInputView}>
+        <TextInput style={styles.TextInput_style} placeholder='     보낼 내용을 입력해주세요'></TextInput>
+        <TouchableOpacity>
+          <Image source={require("./images/send.png")} style={{width:40, resizeMode:'contain'}}/>
+        </TouchableOpacity>
+      </View>
+    )
   }
 }
 
