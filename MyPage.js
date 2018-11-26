@@ -45,7 +45,7 @@ export default class TabViewExample extends React.Component {
           
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <View style={{backgroundColor: 'white', borderRadius: 5, width: 50, height: 20, justifyContent: 'center', alignItems: 'center'}}>
-              <Text style={{color: '#00afff'}}>
+              <Text style={{color: '#00afff', fontSize: 15}}>
                 Lv. 4
               </Text>
             </View>
@@ -56,7 +56,7 @@ export default class TabViewExample extends React.Component {
               <Progress.Bar progress={0.33} width={260} color={'#FFBF00'} unfilledColor={'white'} borderColor={'#109eff'} />
             </View>
             <View style={{flex: 1, justifyContent: 'flex-start'}}>
-              <Text style={{color: 'white', fontSize: 7}}>
+              <Text style={{color: 'white', fontSize: 12}}>
                 80 / 240
               </Text>
             </View>
@@ -64,7 +64,7 @@ export default class TabViewExample extends React.Component {
         </View>
         <View style={{flexDirection: 'row', backgroundColor: "white", flex: 0.7, height: 60, flexDirection: 'row', alignItems:'center'}}> 
           <TouchableOpacity onPress={() => { this._goToMap("map"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
-            <Text style={{ fontSize: 18, color : '#00afff', marginTop: 18.5,textAlign: 'center', fontWeight: 'bold'}}>
+            <Text style={{ fontSize: 18, color : '#00afff', marginTop: 20,textAlign: 'center', fontWeight: 'bold'}}>
             지도 
             </Text>
           }
