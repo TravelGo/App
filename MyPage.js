@@ -3,12 +3,13 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Dimensions, Button, Icon, TouchableOpacity, Image } from 'react-native';
 import * as Progress from 'react-native-progress';
 import ButtonMap from "./ButtonMap_MyPage"
+import Goals from "./Goals"
 
-export default class TabViewExample extends React.Component {
+export default class Mypage extends React.Component {
   Screen = { 
     "map" : ButtonMap,
     "travelstop" : ButtonMap,
-    "challenge" : ButtonMap,
+    "challenge" : Goals,
   }
   state = {
     "currentPage" : this.Screen[Object.keys(this.Screen)[0]]
@@ -62,8 +63,8 @@ export default class TabViewExample extends React.Component {
             </View>
           </View>
         </View>
-        <View style={{flexDirection: 'row', backgroundColor: "white", flex: 0.7, height: 60, flexDirection: 'row', alignItems:'center'}}> 
-          <TouchableOpacity onPress={() => { this._goToMap("map"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1}}>{ 
+        <View style={{flexDirection: 'row', backgroundColor: "white", flex: 0.7, height: 60, flexDirection: 'row', alignItems:'center', }}> 
+          <TouchableOpacity onPress={() => { this._goToMap("map"); }} style={{height: 55, borderColor: '#00afff', borderWidth: 1.5, borderRadius: 8, flex: 1, }}>{ 
             <Text style={{ fontSize: 18, color : '#00afff', marginTop: 20,textAlign: 'center', fontWeight: 'bold'}}>
             지도 
             </Text>
@@ -81,6 +82,8 @@ export default class TabViewExample extends React.Component {
             </Text>
           }
           </TouchableOpacity>
+        </View>
+        <View style={{flex:0.3}}>
         </View>
         <View style={{flex:12}}>
           <this.state.currentPage/>
