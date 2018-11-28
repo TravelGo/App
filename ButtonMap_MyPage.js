@@ -16,65 +16,64 @@ export default class Position extends React.Component {
  
   resetPosition = () => this.setState({ offset: 0 });
  
-  openModal = () => this.setState({ open: true});
+  openModal = (name) => this.setState({modalname:name, open: true});
  
   closeModal = () => this.setState({ open: false });
   render() {
-    var arr = ['경상북도','강원도','경기도','충청남도','충청북도','경상남도','전라남도','전라북도','울산광역시','부산광역시','광주광역시','대구광역시','대전광역시','인천광역시','제주특별자치도','서울특별시']
+//    var arr = ['경상북도','강원도','경기도','충청남도','충청북도','경상남도','전라남도','전라북도','울산광역시','부산광역시','광주광역시','대구광역시','대전광역시','인천광역시','제주특별자치도','서울특별시']
     return (
       <View style={styles.container}>
         <Image source={require("./images/logo.png")} style={styles.logo}/>
         <Image source={require("./images/Korea.png")} style={styles.Korea}/>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("경상북도") }}>
           <Image source={require("./images//Gb.png")} style={styles.Gb}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("강원도")}}>
           <Image source={require("./images/Gw.png")} style={styles.Gw}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("경기도")}}>
           <Image source={require("./images/Gy.png")} style={styles.Gy}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("충청남도")}}>
           <Image source={require("./images//Cn.png")} style={styles.Cn}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("충청북도")}}>
           <Image source={require("./images//Cb.png")} style={styles.Cb}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("경상남도")}}>
           <Image source={require("./images//Gn.png")} style={styles.Gn}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("전라남도")}}>
           <Image source={require("./images//Jn.png")} style={styles.Jn}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("전라북도")}}>
           <Image source={require("./images//Jb.png")} style={styles.Jb}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("울산광역시")}}>
           <Image source={require("./images//Us.png")} style={styles.Us}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("부산광역시")}}>
           <Image source={require("./images//Bs.png")} style={styles.Bs}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("광주광역시")}}>
           <Image source={require("./images//Gj.png")} style={styles.Gj}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("대구광역시")}}>
           <Image source={require("./images//Dg.png")} style={styles.Dg}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("대전광역시")}}>
           <Image source={require("./images//Dj.png")} style={styles.Dj}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("인천광역시")}}>
           <Image source={require("./images//Ic.png")} style={styles.Ic}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("제주특별자치도")}}>
           <Image source={require("./images//Jj.png")} style={styles.Jj}/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.openModal}>
+        <TouchableOpacity onPress={() => { this.openModal("서울특별시")}}>
           <Image source={require("./images/Sl.png")} style={styles.Sl}/>
         </TouchableOpacity>
         <Modal
-          idx = {this.state.idx}
           offset={this.state.offset}
           open={this.state.open}
           modalDidOpen={this.modalDidOpen}
@@ -83,7 +82,7 @@ export default class Position extends React.Component {
         >
           <View style={{ alignItems: "center" }}>
             <Text>
-              이 지역의 포켓스탑은 100개입니다.
+              {this.state.modalname}의 포켓스탑은 100개입니다.
               36개 방문하셨습니다.
             </Text>
             <TouchableOpacity onPress={this.openModal}>
